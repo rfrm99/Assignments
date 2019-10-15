@@ -32,7 +32,7 @@ for value in listofvalues:
 count_list = sortedDict.values()
 indentation = list(range(1,len(count_list)+1))
 
-b1 = plt.barh(indentation, count_list)
+b1 = plt.barh(indentation, count_list,color=('green'))
 plt.yticks(indentation, sortedDict.keys())
 plt.title("The amount of words in a string")
 plt.xlabel("Amount of word")
