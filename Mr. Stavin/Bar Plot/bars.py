@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import os
 
-os.chdir('/Users/Gebruiker/Documents/Binus Files/CS/PDMS/Codes')
+os.chdir('/Users/Gebruiker/Documents/GitHub/Assignments/Mr. Stavin/Bar Plot')
 filename = "indo.txt"
 
 with open(filename, 'r') as f:
@@ -33,7 +33,7 @@ count_list = sortedDict.values()
 indentation = list(range(1,len(count_list)+1))
 
 b1 = plt.barh(indentation, count_list)
-plt.xticks(indentation, sortedDict.keys())
+plt.yticks(indentation, sortedDict.keys())
 plt.title("The amount of words in a string")
 plt.xlabel("Amount of word")
 plt.ylabel("Words")

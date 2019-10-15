@@ -45,20 +45,3 @@ maxValue = max(listAve)
 for key, value in dictInterval.items():
     if maxValue == st.mean(value):
         print("The interval with the maximum number of steps is: " + str(key))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          )
-
