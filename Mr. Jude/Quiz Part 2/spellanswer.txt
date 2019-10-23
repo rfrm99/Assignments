@@ -1,0 +1,13 @@
+I. Inheritance
+a. The parent class is Spell()
+
+b.
+Accio
+Summoning Charm Accio
+No Description
+Confundus Charm Confundo
+Causes the victim to become confused and befuddled.
+
+c. Both get functions get called when you call study_spell(Confundo()), due to the whole class being called instead of specifying it to a function in the class.
+
+d. Answer is in the code
