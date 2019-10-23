@@ -4,10 +4,10 @@ def displaystaff(file):
     words = []
     with open(file,'r') as f:
         for line in f:
-            line_new = '{:<10}  {:<10}  {:<10}'.format("|" + line.split("#")[0],"|" + line.split("#")[1],"|" + line.split("#")[2],"|" + line.split("#")[3])
+            line_new = '{:<10}{:<10}{:<10}{:<10}'.format("|" + line.split("#")[0],"|" + line.split("#")[1],"|" + line.split("#")[2],"|" + line.split("#")[3].strip('\n'))
             print(line_new)
 
-class Staff:
+class Company:
     __companyname = ''
     __name = ''
     __id = ''
@@ -102,7 +102,7 @@ def loadfile(file, companyname):
             if id == line[0]:
                 print("ID already registered")
             else:
-                 return Staff(companyname).addstaff(name, id, position, salary)
+                 return Company(companyname).addstaff(name, id, position, salary)
 
 def savefile(file, newline):
     with open(file, "a") as f:
@@ -120,10 +120,10 @@ def options(file, companyname):
 
     elif choice == '2':
         id = input("Enter the ID of the person to delete")
-        Staff(companyname).deletestaff(id)
+        Company(companyname).deletestaff(id)
 
     elif choice == '3':
-        Staff(companyname).minmaxavg()
+        Company(companyname).minmaxavg()
 
     elif choice == '4':
         quit()
