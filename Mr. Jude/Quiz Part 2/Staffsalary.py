@@ -66,7 +66,6 @@ class Staff:
         with open(file, 'r') as f:
             lines = f.readlines()
             for line in lines:
-                print(line.split("#")[0])
                 if line.split("#")[2] == 'Staff':
                     staffsalarylist.append(str(line.split("#")[3]).strip("\n"))
                 elif line.split("#")[2] == 'Manager':
@@ -83,15 +82,15 @@ class Staff:
             print("1. Staff")
             print("Minimum Salary " + min(staffsalarylist))
             print("Maximum Salary " + max(staffsalarylist))
-            print("Average Salary " + str(staffaverage))
+            print("Average Salary " + str(int(staffaverage)))
             print("2. Manager")
             print("Minimum Salary " + min(managersalarylist))
             print("Maximum Salary " + max(managersalarylist))
-            print("Average Salary " + str(manageraverage))
+            print("Average Salary " + str(int(manageraverage)))
             print("3. Officer")
             print("Minimum Salary " + min(officersalarylist))
             print("Maximum Salary " + max(officersalarylist))
-            print("Average Salary " + str(officeraverage))
+            print("Average Salary " + str(int(officeraverage)))
 
 def loadfile(file, companyname):
     name = input("Enter new staff name")
