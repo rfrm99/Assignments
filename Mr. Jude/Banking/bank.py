@@ -65,7 +65,7 @@ class Bank:
         return self.__customers[index]
 
 
-def loadfile(file, firstname, lastname, newvalue):
+def loadandsavefile(file, firstname, lastname, newvalue):
     with open(file, "r") as f:
         reader = csv.reader(f)
         fNameList = [row[0] for row in reader]
@@ -76,10 +76,10 @@ def loadfile(file, firstname, lastname, newvalue):
         for i in range(len(fNameList)):
             if fNameList[i] == firstname and lastNameList[i] == lastname:
                 balanceList[i] = newvalue
-        with open(file, "w") as f:
+    with open(file, "w") as f:
             #writer = csv.writer(f)
-            for j in range(len(fNameList)):
-                f.writelines(f'{fNameList[j]},{lastNameList[j]},{balanceList[j]} \n')
+        for j in range(len(fNameList)):
+            f.writelines(f'{fNameList[j]},{lastNameList[j]},{balanceList[j]} \n')
 
 
 def start():
@@ -106,6 +106,7 @@ def start():
             answer = f'{Bank("ABC").getCustomer(0).getfirstname()}, {Bank("ABC").getCustomer(0).getlastname()}, {Bank("ABC").getCustomer(0).getAccount()}'
             f.writelines(f'{answer} \n')
     elif choice.lower() == "b":
+
             print(Customer(firstname,lastname).getAccount().getBalance())
     elif choice.lower() == "c":
         amt = int(input("Enter deposit amount: "))
