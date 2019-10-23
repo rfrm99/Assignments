@@ -103,10 +103,9 @@ def start():
         print("Thank you for registering")
         with open(file, "a") as f:
             #writer = csv.writer(f)
-            answer = f'{Bank("ABC").getCustomer(0).getfirstname()}, {Bank("ABC").getCustomer(0).getlastname()}, {Bank("ABC").getCustomer(0).getAccount()}'
+            answer = f'{Bank("ABC").getCustomer(0).getfirstname()},{Bank("ABC").getCustomer(0).getlastname()},{Bank("ABC").getCustomer(0).getAccount()}'
             f.writelines(f'{answer} \n')
     elif choice.lower() == "b":
-
             print(Customer(firstname,lastname).getAccount().getBalance())
     elif choice.lower() == "c":
         amt = int(input("Enter deposit amount: "))
@@ -122,20 +121,3 @@ def start():
         print("Please input between A - E")
 
 start()
-
-
-# myFC = Customer("Mia", "Ozawa")
-# print(myFC.getAccount().getBalance())
-#
-# myAccount = Account(5000)
-# myAccount2 = Account(10000)
-#
-# # myAccount.__balance = 1000000
-#
-# # if(myAccount.deposit(10000)):
-# if(myAccount.withdraw(4500)):
-#     print("Account balance is >> ", myAccount.getBalance())
-# else:
-#     print("babi")
-# print("Account balance is >> ",myAccount.getBalance())
-# print("Account balance is >> ",myAccount2.getBalance())
