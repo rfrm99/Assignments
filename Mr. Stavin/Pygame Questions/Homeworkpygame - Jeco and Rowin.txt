@@ -1,0 +1,128 @@
+Homework PyGame Answer
+by: Jeconiah and Rowin
+
+1. Pygame is a set of modules in python that allows the user to write and create games in python. Yes you can modify its source code. 
+
+2. The rectangle is an object in pygame used to store rectangular coordinates. pygame.rect
+
+3. Yes you can, pygame.mixer.music
+
+4. pygame.time.get.ticks is used to start the countdown, pygame.time.get_ticks()-start_ticks)/1000 is used to count the
+number of seconds, to stop the countdown we can add a condition if number of seconds > 20 break and has to be placed in
+a while loop
+
+5. Sprite is a class for visible objects in the game while group is used to manipulate more than one sprite objects
+
+6. Collision detection is used to limit how much the sprite can move, without it the sprite can go missing out of the
+game screen
+
+7. self.nameofspriteclass.blitme(), blit draws the image to the screen at a given position
+
+8. Use pygame.sprite.Group.draw to tell a bunch of sprites to update and draw at the same time.
+
+import pygame
+import random
+
+pygame.init()
+
+BLACK = (0, 0, 0)
+WHITE = (255, 255, 255)
+
+class Block(pygame.sprite.Sprite):
+    def __init__(self, color, width, height):
+        super().__init__()
+
+        self.image = pygame.Surface([width, height])
+        self.image.fill(color)
+
+        self.rect = self.image.get_rect()
+
+    def reset_pos(self):
+        self.rect.y = random.randrange(-300, -20)
+        self.rect.x = random.randrange(0, screen_width)
+
+    def update(self):
+        self.rect.y += 10
+        if self.rect.y > 410:
+            self.reset_pos()
+
+screen_width = 700
+screen_height = 400
+screen = pygame.display.set_mode([screen_width, screen_height])
+
+block_list = pygame.sprite.Group()
+all_sprites_list = pygame.sprite.Group()
+
+for i in range(50):
+    block = Block(BLACK, 20, 15)
+    block.rect.x = random.randrange(screen_width)
+    block.rect.y = random.randrange(screen_height)
+
+    block_list.add(block)
+    all_sprites_list.add(block)
+clock = pygame.time.Clock()
+done = False
+score = 0
+while not done:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            done = True
+    screen.fill(WHITE)
+    all_sprites_list.update()
+
+    all_sprites_list.draw(screen)
+    clock.tick(20)
+
+    pygame.display.flip()
+
+pygame.quit()
+
+
+10. Game physics basically applies the law of physics into the gaming world. It is important because that way a game can
+appear more realistic and not outrageous or weird
+
+11. 
+
+import pygame
+
+pygame.init()
+
+white = (255, 255, 255)
+black = (0, 0, 0)
+
+X = 400
+Y = 400
+
+display_surface = pygame.display.set_mode((X, Y))
+font = pygame.font.Font('James_Fajardo.ttf', 60)  # Any font in the same folder or location
+
+text = font.render('This is a text', True, black)
+
+textRect = text.get_rect()
+
+textRect.center = (X // 2, Y // 2)  # This is to make the text centered
+
+while True:
+    display_surface.fill(white)
+
+    display_surface.blit(text, textRect)
+
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            quit()
+        pygame.display.update()
+
+12. To move a sprite we need to use a code that tells the game if the user presses a key the sprite moves.
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_RIGHT:
+                    self.nameofsprite.moving_right = True
+this code tell that if the right key is pressed down then the sprite will move to the right
+
+13. self.screen.fill((60, 20, 90)) in this example code it shows a way to change the color of the background, to choose
+the color, you have to input rgb numbers in the parameter of the code.
+
+14. random.randint(a,b) 
+a, b are used as the coordinates of the sprites
+
+15. yes
