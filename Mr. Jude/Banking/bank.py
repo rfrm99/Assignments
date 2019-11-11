@@ -65,7 +65,7 @@ class Bank:
         return self.__customers[index]
 
 
-def loadandsavefile(file, firstname, lastname, newvalue):
+def loadfile(file, firstname, lastname, newvalue):
     with open(file, "r") as f:
         reader = csv.reader(f)
         fNameList = [row[0] for row in reader]
