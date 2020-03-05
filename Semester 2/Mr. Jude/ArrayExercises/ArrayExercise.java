@@ -36,7 +36,7 @@ class ArrayExercise {
         }
     }
     public static void main(String[] args) {
-        int[] x1 = new int[10];
+        int[] x1 = new int[10]; //creates an array
         Scanner scan = new Scanner(System.in);
 
         System.out.println("No. 1 and 2");
@@ -131,7 +131,7 @@ class ArrayExercise {
         System.out.println("No. 7");
         int[] mainarr = {1,2,3,4,5,6};
         //int[] mainarr = {1,2,3,4,5}; to try an odd number
-        if(mainarr.length % 2 == 0) {
+        if(mainarr.length % 2 == 0) { //for even number length of list
             int[] firstarr = new int[mainarr.length / 2];
             int[] secondarr = new int[firstarr.length];
             System.out.println("Before split: ");
@@ -152,7 +152,7 @@ class ArrayExercise {
             for(int i = 0; i < secondarr.length; i++) {
                 System.out.println(secondarr[i]);
             }
-        }else if(mainarr.length % 2 != 0){
+        }else if(mainarr.length % 2 != 0){ //for odd number length of list
             int[] firstarr = new int[(mainarr.length+1)/2];
             int[] secondarr = new int[mainarr.length - firstarr.length];
             for(int i = 0; i < mainarr.length; i++) {
@@ -176,7 +176,7 @@ class ArrayExercise {
         //8
         System.out.println("No. 8");
         int[] sample = {4,8,6,3,2};
-        int[] sampout = new int[sample.length+1];
+        int[] sampout = new int[sample.length+1]; //a list to hold new values
         int biggest = sample[0];
         int temp1 = 0;
         int temp2 = 0;
@@ -190,7 +190,7 @@ class ArrayExercise {
         }
         for(int i = 0; i < sample.length; i++) {
             for (int j = i; j > 0; j--) {
-                if ((sample[j] + sample[i]) == biggest) {
+                if ((sample[j] + sample[i]) == biggest) { //this part iterates through evey possible pair and finds the pair that matches
 
                     temp1 = sample[j];
                     temp2 = sample[i];
@@ -208,7 +208,7 @@ class ArrayExercise {
                 sampout[i] = sample[i];
             }
         }
-        sample = sampout;
+        sample = sampout; //giving original list the new values
         System.out.println("After process: ");
         for(int i = 0; i < sample.length; i++) {
             System.out.println(sample[i]);
@@ -222,8 +222,8 @@ class ArrayExercise {
         System.out.println("Before swap: ");
         for(int i = 0; i < x6.length; i++) {
             System.out.println(x6[i]);
-            temp = x6[i];
-            temparr[x6.length-1-i] = temp;
+            temp = x6[i]; //sets temporary value
+            temparr[x6.length-1-i] = temp; //temporary array given temporary value from a reverse index
         }
         x6 = temparr;
         System.out.println("After swap: ");
@@ -237,7 +237,7 @@ class ArrayExercise {
         System.out.println("Before Sorting:");
         for(int i = 0; i < x5.length; i++) {
             System.out.println(x5[i]);
-            for(int j = i; j > 0; j--){
+            for(int j = i; j > 0; j--){ //this part checks every possible pair from the front one by one
                 if (x5[j] < x5[j-1]){
                     temp = x5[j];
                     x5[j] = x5[j-1];
