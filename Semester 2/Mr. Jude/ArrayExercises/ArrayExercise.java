@@ -159,8 +159,7 @@ class ArrayExercise {
         int[] sample = {4,8,6,3,2};
         int[] sampout = new int[sample.length+1]; //a list to hold new values
         int biggest = sample[0];
-        int temp1 = 0;
-        int temp2 = 0;
+        int nextbiggest = sample[0];
         int keepindex = 0;
         System.out.println("Before process: ");
         for (int i = 0; i < sample.length; i++) {
@@ -169,19 +168,15 @@ class ArrayExercise {
                 biggest = sample[i];
             }
         }
-        for(int i = 0; i < sample.length; i++) {
-            for (int j = i; j > 0; j--) {
-                if ((sample[j] + sample[i]) == biggest) { //this part iterates through evey possible pair and finds the pair that matches
-
-                    temp1 = sample[j];
-                    temp2 = sample[i];
-                }
+        for (int i = 0; i < sample.length; i++) {
+            if (sample[i] > nextbiggest && sample[i] < biggest) {
+                nextbiggest = sample[i];
             }
         }
         for(int i = 0; i < sample.length; i++) {
             if(sample[i] == biggest){
-                sampout[i] = temp1;
-                sampout[i+1] = temp2;
+                sampout[i] = nextbiggest;
+                sampout[i+1] = biggest- nextbiggest;
                 keepindex = i;
             }else if(i > keepindex){
                 sampout[i+1] = sample[i];
