@@ -132,9 +132,7 @@ class ArrayExercise {
 
         //7
         System.out.println("No. 7");
-        int[] mainarr = {1,2,3,4,5,6};
-        //int[] mainarr = {1,2,3,4,5}; to try an odd number
-        if(mainarr.length % 2 == 0) { //for even number length of list
+        int[] mainarr = {1,2,3,4,5,6,7,8,9,10};
             int[] firstarr = new int[mainarr.length / 2];
             int[] secondarr = new int[firstarr.length];
             System.out.println("Before split: ");
@@ -155,26 +153,6 @@ class ArrayExercise {
             for(int i = 0; i < secondarr.length; i++) {
                 System.out.println(secondarr[i]);
             }
-        }else if(mainarr.length % 2 != 0){ //for odd number length of list
-            int[] firstarr = new int[(mainarr.length+1)/2];
-            int[] secondarr = new int[mainarr.length - firstarr.length];
-            for(int i = 0; i < mainarr.length; i++) {
-                if (i < firstarr.length) {
-                    firstarr[i] = mainarr[i];
-                } else {
-                    secondarr[i - firstarr.length] = mainarr[i];
-                }
-            }
-            System.out.println("After split: ");
-            System.out.println("First half: ");
-            for(int i = 0; i < firstarr.length; i++) {
-                System.out.println(firstarr[i]);
-            }
-            System.out.println("Second half:");
-            for(int i = 0; i < secondarr.length; i++) {
-                System.out.println(secondarr[i]);
-            }
-        }
 
         //8
         System.out.println("No. 8");
