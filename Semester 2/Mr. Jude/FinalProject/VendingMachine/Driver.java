@@ -86,6 +86,9 @@ public class Driver {
         Scanner scan = new Scanner(System.in);
         Scanner scan1 = new Scanner(System.in);
 
+        //ATTENTION
+        //THERE MIGHT BE AN ERROR CAUSED BY THE WORKING DIRECTORY, PLEASE CHANGE TO THE VENDING MACHINE PACKAGE//
+
         boolean flag = true; //flag for while loop
         v.loadFile(); //loads the user accounts
         while (flag) {
